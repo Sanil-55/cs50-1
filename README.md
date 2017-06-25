@@ -1,2 +1,3 @@
 # CS50_HW
-Introduction to Computer Science course homework
+
+Homework of Harvard University's Introduction to Computer Science course.
