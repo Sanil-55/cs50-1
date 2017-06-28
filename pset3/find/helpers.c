@@ -17,7 +17,7 @@ bool search(int value, int values[], int n)
     // binary search
     if (n >= 1)
     {
-        int mid = (n - 1)/2 + 1;
+        int mid = (n - 1)/2;
         if (value == values[mid])
         {
             return true;
