@@ -36,17 +36,22 @@ int main(int argc, char *argv[])
 }
 
 // function to print out encrypted message
-int cipher(string s, int k)
+int decipher(string s, int k)
 {
+	// loop through each character of the input message
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        if (s[i] + k <= 'z')
+        if (islower(s[i]))
 	    {
-	        printf("%c", s[i] + k);
+	        printf("%c", (s[i] -97 + k) % 26 + 97);
 	    }
-	    else 
+	    else if (isupper(s[i]))
 	    {
-	        printf("%c", s[i] + k - 26);
+	        printf("%c", (s[i] - 65 + k) % 26 + 65);
+	    }
+	    else
+	    {
+	        printf("%c", s[i]);
 	    }
     }
     return 0;
