@@ -1,6 +1,6 @@
-# CS50_HW
+# CS50
 
-Homework of Harvard University's Introduction to Computer Science course. 
+My solution to the problem sets of Harvard University's Introduction to Computer Science course. 
 
 ## Install CS50 Library  
 
