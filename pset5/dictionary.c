@@ -1,6 +1,5 @@
-/** 
- * solution to CS50 problem set 5 speller
- * dictionary's functionality for the speller checker
+/**
+ * Implements a dictionary's functionality.
  */
 
 #include <stdbool.h>
@@ -128,15 +127,19 @@ bool load(const char *dictionary)
         // read word and store it in new_node->word
         fscanf(dict, "%s", new_node->word);
         
-        // get the hash code of the word
-        int h = hash(new_node->word);
-    
-        // insert the new node to the beginning of the corresponding linked list in hash table
-        new_node->next = hashtable[h];
-        hashtable[h] = new_node;
+        if (strlen(new_node->word) != 0)
+        {
+            // get the hash code of the word
+            int h = hash(new_node->word);
+            
+            // insert the new node to the beginning of the corresponding linked list in hash table
+            new_node->next = hashtable[h];
+            hashtable[h] = new_node;
+            
+            // increase the word counter by 1
+            counter++;
+        }
         
-        // increase the word counter by 1
-        counter++;
     }
     
     // close the dictionary
@@ -192,3 +195,6 @@ bool unload(void)
         return false;
     }
 }
+
+
+
