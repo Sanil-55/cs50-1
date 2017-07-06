@@ -8,11 +8,11 @@ def main():
     encrypting messages using a sequence of keys
     """
     
-    # insure proper command line input
+    # insure proper command line argument
     if len(sys.argv) != 2:
-        print("Incorrect command-line argument")
-    else:
-        keyword = sys.argv[1]
+        sys.exit("Usage: python vigenere.py keyword")
+    
+    keyword = sys.argv[1]
         
     # keyword should be all letters   
     if keyword.isalpha() == False:
