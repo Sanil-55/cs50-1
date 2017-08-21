@@ -13,26 +13,18 @@
 
 int main(void)
 {
-    string s = get_string();
+    string name = get_string();
     
-    if (s != NULL)
+    // loop through all characters, print any letter (captilized) found after a space
+    for (int i = 0, length = strlen(name); i < length; i++)
     {
-        // print the first letter (captalized) if no leading space
-        if (s[0] != ' ')
+        if ((i == 0 && isalpha(name[0])) ||
+            (isalpha(name[i]) && isspace(name[i - 1])))
         {
-            printf("%c", toupper(s[0]));
-        }
-        
-        // loop through the string and print the first letter after a space
-        for (int i = 0, n = strlen(s); i < n; i++)
-        {
-            if (s[i] == ' ' && s[i+1] != ' ') 
-            {
-                printf("%c", toupper(s[i+1]));
-            }
+            printf("%c", toupper(name[i]));
         }
     }
     
-    printf("\n");    
+    printf("\n");
     
 }
