@@ -18,3 +18,9 @@ The functions implemented in this web app includ:
 ## Implementation details  
 
 This web app is implemented with Flask in Python 3.6. The data about users, user portfolio, and transaction histories are stored in SQL databases (`finance.db`). 
+
+To install the dependencies, run 
+
+```
+pip install --user -r requirements.txt
+```
